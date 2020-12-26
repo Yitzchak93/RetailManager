@@ -1,5 +1,0 @@
-C:\Users\yitzc\source\repos\TimCoRetailManager\TRMData\bin\Debug\TRMData.dacpac
-C:\Users\yitzc\source\repos\TimCoRetailManager\TRMData\bin\Debug\TRMData.dll
-C:\Users\yitzc\source\repos\TimCoRetailManager\TRMData\bin\Debug\TRMData.pdb
-C:\Users\yitzc\source\repos\TimCoRetailManager\TRMData\obj\Debug\TRMData.dll
-C:\Users\yitzc\source\repos\TimCoRetailManager\TRMData\obj\Debug\TRMData.pdb

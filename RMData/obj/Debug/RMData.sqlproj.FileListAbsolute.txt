@@ -1,0 +1,10 @@
+C:\Users\yitzc\source\repos\TimCoRetailManager\RMData\bin\Debug\RMData.dacpac
+C:\Users\yitzc\source\repos\TimCoRetailManager\RMData\bin\Debug\RMData.dll
+C:\Users\yitzc\source\repos\TimCoRetailManager\RMData\bin\Debug\RMData.pdb
+C:\Users\yitzc\source\repos\TimCoRetailManager\RMData\obj\Debug\RMData.sqlprojAssemblyReference.cache
+C:\Users\yitzc\source\repos\TimCoRetailManager\RMData\obj\Debug\RMData.dll
+C:\Users\yitzc\source\repos\TimCoRetailManager\RMData\obj\Debug\RMData.pdb
+C:\Users\yitzc\source\repos\TimCoRetailManager\RMData\obj\Debug\Model.xml
+C:\Users\yitzc\source\repos\TimCoRetailManager\RMData\obj\Debug\refactor.xml
+C:\Users\yitzc\source\repos\TimCoRetailManager\RMData\obj\Debug\postdeploy.sql
+C:\Users\yitzc\source\repos\TimCoRetailManager\RMData\obj\Debug\predeploy.sql
