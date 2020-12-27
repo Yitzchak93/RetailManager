@@ -1,2 +1,2 @@
 # Retail Manager
-A retail management system. 
+A retail management system.
