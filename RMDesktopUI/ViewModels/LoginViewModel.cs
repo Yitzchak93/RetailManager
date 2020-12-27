@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using RMDesktopUI.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,10 +13,17 @@ namespace RMDesktopUI.ViewModels
         private string _userName;
 
         private string _password;
+        private IAPIHelper _apiHelper;
+
+        public LoginViewModel(IAPIHelper apiHelper)
+        {
+            _apiHelper = apiHelper;
+        }
         public string UserName
         {
             get { return _userName; }
-            set {
+            set
+            {
                 _userName = value;
                 NotifyOfPropertyChange(() => UserName);
                 NotifyOfPropertyChange(() => CanLogIn);
@@ -25,7 +33,8 @@ namespace RMDesktopUI.ViewModels
         public string Password
         {
             get { return _password; }
-            set {
+            set
+            {
                 _password = value;
                 NotifyOfPropertyChange(() => Password);
                 NotifyOfPropertyChange(() => CanLogIn);
@@ -35,17 +44,24 @@ namespace RMDesktopUI.ViewModels
         {
             get
             {
-            bool output = false;
-                if(UserName?.Length > 0 && Password?.Length > 0)
+                bool output = false;
+                if (UserName?.Length > 0 && Password?.Length > 0)
                 {
                     output = true;
                 }
                 return output;
             }
         }
-        public void Login()
+        public async Task Login()
         {
-            Console.WriteLine();
+                try
+            {
+                var result = await _apiHelper.Authenticate(UserName, Password);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            };
         }
 
     }
