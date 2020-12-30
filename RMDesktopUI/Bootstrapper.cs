@@ -8,6 +8,8 @@ using System.Windows;
 using RMDesktopUI.ViewModels;
 using System.Windows.Controls;
 using RMDesktopUI.Helpers;
+using RMDesktopUI.Library.Api;
+using RMDesktopUI.Library.Models;
 
 namespace RMDesktopUI
 {
@@ -29,6 +31,7 @@ namespace RMDesktopUI
             _container
                 .Singleton<IWindowManager, WindowManager>()
                 .Singleton<IEventAggregator, EventAggregator>()
+                .Singleton<ILoggedInUserModel,LoggedInUserModel>()
                 .Singleton<IAPIHelper, APIHelper>();
 
             GetType().Assembly.GetTypes()
