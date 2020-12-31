@@ -57,22 +57,21 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="dbo" />
-    <Folder Include="dbo\Stored Procedures" />
     <Folder Include="dbo\Views" />
     <Folder Include="dbo\Tables" />
     <Folder Include="PublishLocations" />
-    <Folder Include="Stored Procedures" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="PublishLocations\RMData.publish.xml" />
-    <None Include="Stored Procedures\RMData.publish.xml" />
+    <Folder Include="dbo\Stored Procedures" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Inventory.sql" />
-    <Build Include="dbo\Tables\Product.sql" />
     <Build Include="dbo\Tables\Sale.sql" />
     <Build Include="dbo\Tables\SaleDetail.sql" />
     <Build Include="dbo\Tables\User.sql" />
-    <Build Include="Stored Procedures\spUserLookup.sql" />
+    <Build Include="dbo\Stored Procedures\spUserLookup.sql" />
+    <Build Include="dbo\Stored Procedures\spProduct_GetAll.sql" />
+    <Build Include="dbo\Tables\dbo.Product.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PublishLocations\RMData.publish.xml" />
   </ItemGroup>
 </Project>

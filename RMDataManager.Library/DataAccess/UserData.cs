@@ -16,7 +16,7 @@ namespace RMDataManager.Library.DataAccess
         {
             SqlDataAccess sql = new SqlDataAccess();
             var p = new { Id = Id };
-            var output = sql.LoadData<UserModel, dynamic>("dbo.spUserLookup", p, "RMData");
+            var output = sql.LoadData<UserModel, dynamic>("spUserLookup", p, "RMData");
             return output;
         }
     }
