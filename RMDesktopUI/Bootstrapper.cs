@@ -10,12 +10,14 @@ using System.Windows.Controls;
 using RMDesktopUI.Helpers;
 using RMDesktopUI.Library.Api;
 using RMDesktopUI.Library.Models;
+using RMDesktopUI.Library.Helpers;
 
 namespace RMDesktopUI
 {
     public class Bootstrapper : BootstrapperBase
     {
         private SimpleContainer _container = new SimpleContainer();
+
         public Bootstrapper()
         {
             Initialize();
@@ -24,6 +26,7 @@ namespace RMDesktopUI
                 "Password",
                 "PasswordChanged");
         }
+
         protected override void Configure()
         {
             _container.Instance(_container)
@@ -33,6 +36,7 @@ namespace RMDesktopUI
                 .Singleton<IWindowManager, WindowManager>()
                 .Singleton<IEventAggregator, EventAggregator>()
                 .Singleton<ILoggedInUserModel, LoggedInUserModel>()
+                .Singleton<IConfigHelper, ConfigHelper>()
                 .Singleton<IAPIHelper, APIHelper>();
 
             GetType().Assembly.GetTypes()

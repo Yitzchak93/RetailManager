@@ -6,7 +6,8 @@
     [RetailPrice]  MONEY          NOT NULL,
 	[QuantityInStock] INT NOT NULL DEFAULT 1,
     [CreateDate]   DATETIME2 (7)  DEFAULT (getutcdate()) NOT NULL,
-    [LastModified] DATETIME2 (7)  DEFAULT (getutcdate()) NOT NULL,
+    [LastModified] DATETIME2 (7)  DEFAULT (getutcdate()) NOT NULL, 
+    [IsTaxable] BIT NOT NULL DEFAULT 1,
     --PRIMARY KEY CLUSTERED ([Id] ASC)
 ); 
 
