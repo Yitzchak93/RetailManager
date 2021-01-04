@@ -10,7 +10,6 @@
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "RMDataManager.Models.ApplicationDbContext";
         }
 
         protected override void Seed(RMDataManager.Models.ApplicationDbContext context)
