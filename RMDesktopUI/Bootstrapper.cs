@@ -1,16 +1,14 @@
 ﻿using Caliburn.Micro;
+using RMDesktopUI.Helpers;
+using RMDesktopUI.Library.Api;
+using RMDesktopUI.Library.Helpers;
+using RMDesktopUI.Library.Models;
+using RMDesktopUI.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using RMDesktopUI.ViewModels;
 using System.Windows.Controls;
-using RMDesktopUI.Helpers;
-using RMDesktopUI.Library.Api;
-using RMDesktopUI.Library.Models;
-using RMDesktopUI.Library.Helpers;
 
 namespace RMDesktopUI
 {
@@ -30,7 +28,8 @@ namespace RMDesktopUI
         protected override void Configure()
         {
             _container.Instance(_container)
-                .PerRequest<IProductEndpoint, ProductEndpoint>();
+                .PerRequest<IProductEndpoint, ProductEndpoint>()
+                .PerRequest<ISaleEndpoint, SaleEndpoint>();
 
             _container
                 .Singleton<IWindowManager, WindowManager>()
