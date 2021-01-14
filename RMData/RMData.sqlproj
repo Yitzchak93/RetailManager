@@ -75,6 +75,6 @@
     <Build Include="dbo\Stored Procedures\spSaleDetail_Insert.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="PublishLocations\RMData.publish.xml" />
+    <None Include="RMData.publish.xml" />
   </ItemGroup>
 </Project>
