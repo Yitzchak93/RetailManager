@@ -59,12 +59,18 @@ namespace RMDesktopUI.Library.Api
                 }
             }
         }
-        public async Task GetLoggedInUserInfo(string token)
 
+        public void LogOffUser()
+        {
+            _apiClient.DefaultRequestHeaders.Clear();
+        }
+        //TODO: MY TODO I think this is where the api gets the token
+        public async Task GetLoggedInUserInfo(string token)
         {
             _apiClient.DefaultRequestHeaders.Clear();
             _apiClient.DefaultRequestHeaders.Accept.Clear();
             _apiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            // TODO: MY TODO another place the token is used
             _apiClient.DefaultRequestHeaders.Add("Authorization", $"Bearer { token }");
             using (HttpResponseMessage response = await _apiClient.GetAsync("/api/User"))
             {
