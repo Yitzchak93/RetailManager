@@ -35,7 +35,7 @@ namespace RMDesktopUI.ViewModels
             {
                 bool output = false;
 
-                // TODO: MY TODO the token seems to be woking here but on webpage it isnt for some reason displaying
+                // TODO: (token) MY TODO the token seems to be woking here but on webpage it isnt for some reason displaying
                 if (string.IsNullOrEmpty(_user.Token) == false)
                 {
                     output = true;
@@ -52,7 +52,7 @@ namespace RMDesktopUI.ViewModels
 
         public void LogOut()
         {
-            //TODO: MYTODO It seams that here the user model(which includes the token) and the header
+            //TODO: MY TODO (token) It seams that here the user model(which includes the token) and the header
             _user.ResetUserModel();
             _apiHelper.LogOffUser();
             ActivateItem(IoC.Get<LoginViewModel>());
