@@ -71,8 +71,8 @@ namespace RMDataManager.Library.DataAccess
                         //Save the sale detail models
                         sql.SaveDataInTransaction("dbo.spSaleDetail_Insert", item);
                     }
-                   // TODO: MY TODO (using statement) the using statement already closes the connection 
-                   // sql.CommitTransaction();
+                    // TODO: MY TODO (using statement) the using statement already closes the connection 
+                    sql.CommitTransaction();
 
                 }
                 catch
