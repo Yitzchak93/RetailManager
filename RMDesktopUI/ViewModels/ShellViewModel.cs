@@ -50,6 +50,11 @@ namespace RMDesktopUI.ViewModels
             TryClose();
         }
 
+        public void UserManagement()
+        {
+            ActivateItem(IoC.Get<UserDisplayViewModel>());
+        }
+
         public void LogOut()
         {
             //TODO: MY TODO (token) It seams that here the user model(which includes the token) and the header

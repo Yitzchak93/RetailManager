@@ -22,8 +22,10 @@ namespace RMDesktopUI.Library.Api
             {
                 if (response.IsSuccessStatusCode)
                 {
-                    var result = response.Content.ReadAsAsync<List<ProductModel>>();
-                    return await result;
+                    // TODO: 2M instead or var result = return await, var result = await return result 
+                    
+                    var result = await response.Content.ReadAsAsync<List<ProductModel>>();
+                    return result;
                 }
                 else
                 {
