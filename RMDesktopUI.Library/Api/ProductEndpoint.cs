@@ -27,7 +27,8 @@ namespace RMDesktopUI.Library.Api
                 }
                 else
                 {
-                    throw new Exception();
+                    // TODO: 1M Insead of just throwing an exception I throw exception with response.ReasonPrase
+                    throw new Exception(response.ReasonPhrase);
                 }
             }
         }
