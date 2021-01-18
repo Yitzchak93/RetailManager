@@ -20,6 +20,7 @@ namespace RMDataManager.Library.Internal.DataAccess
         public List<T> LoadData<T, U>(string storedProcedure, U parameters, string connectionStringName)
         {
             string connectionstring = GetConnectionString(connectionStringName);
+
             using (IDbConnection connection = new SqlConnection(connectionstring))
             {
                 List<T> rows = connection.Query<T>(storedProcedure, parameters,
@@ -32,6 +33,7 @@ namespace RMDataManager.Library.Internal.DataAccess
         public void SaveData<T>(string storedProcedure, T parameters, string connectionStringName)
         {
             string connectionstring = GetConnectionString(connectionStringName);
+
             using (IDbConnection connection = new SqlConnection(connectionstring))
             {
                 connection.Execute(storedProcedure, parameters,
