@@ -7,13 +7,14 @@ using System.Text;
 using System.Threading.Tasks;
 using RMDesktopUI.Library.Api;
 using RMDesktopUI.EventModels;
+using System.Threading;
 
 namespace RMDesktopUI.ViewModels
 {
     public class LoginViewModel : Screen
     {
         private string _userName = "yitzchak@iamyitzchak.com";
-        private string _password="Pwd12345.";
+        private string _password = "Pwd12345.";
 
         private IAPIHelper _apiHelper;
         private IEventAggregator _events;
@@ -21,7 +22,7 @@ namespace RMDesktopUI.ViewModels
         public LoginViewModel(IAPIHelper apiHelper, IEventAggregator events)
         {
             _apiHelper = apiHelper;
-            _events = events; 
+            _events = events;
         }
 
         public string UserName
@@ -97,7 +98,7 @@ namespace RMDesktopUI.ViewModels
                 // Capture more information about the user
                 await _apiHelper.GetLoggedInUserInfo(result.Access_Token);
 
-                _events.PublishOnUIThread(new LogOnEvent() );
+                await _events.PublishOnUIThreadAsync(new LogOnEvent(), new CancellationToken());
 
             }
             catch (Exception ex)
