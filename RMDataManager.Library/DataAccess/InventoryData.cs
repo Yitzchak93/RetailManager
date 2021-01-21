@@ -13,6 +13,7 @@ namespace RMDataManager.Library.DataAccess
     {
         private readonly IConfiguration _config;
 
+
         public InventoryData(IConfiguration config)
         {
             _config = config;
