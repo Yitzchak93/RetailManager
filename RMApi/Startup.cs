@@ -1,19 +1,16 @@
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using RMApi.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.OpenApi.Models;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
+using RMApi.Data;
+using RMDataManager.Library.DataAccess;
+using RMDataManager.Library.Internal.DataAccess;
+using System;
 using System.Text;
 
 namespace RMApi
@@ -38,6 +35,14 @@ namespace RMApi
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
+
+            // Personal Services
+            services.AddTransient<IInventoryData, InventoryData>();
+            services.AddTransient<IProductData, ProductData>();
+            services.AddTransient<ISaleData, SaleData>();
+            services.AddTransient<IUserData, UserData>();
+            services.AddTransient<ISqlDataAccess, SqlDataAccess>();
+
             services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = "JwtBearer";

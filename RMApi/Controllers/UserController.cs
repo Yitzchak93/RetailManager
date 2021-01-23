@@ -1,14 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
 using RMApi.Data;
 using RMApi.Models;
 using RMDataManager.Library.DataAccess;
 using RMDataManager.Library.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
@@ -23,20 +19,22 @@ namespace RMApi.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly UserManager<IdentityUser> _userManager;
-        private readonly IConfiguration _config;
-        public UserController(ApplicationDbContext context, UserManager<IdentityUser> userManager, IConfiguration config)
+        private readonly IUserData _userData;
+
+        public UserController(ApplicationDbContext context,
+                              UserManager<IdentityUser> userManager,
+                              IUserData userData)
         {
             _context = context;
             _userManager = userManager;
-            _config = config;
+            _userData = userData;
         }
         [HttpGet]
         public UserModel GetUserById()
         {
-            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier); //old way - RequestContext.Principal.Identity.GetUserId();
-            UserData data = new UserData(_config);
+            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            return data.GetUserById(userId).First();
+            return _userData.GetUserById(userId).First();
         }
 
         [Authorize(Roles = "Admin")]
@@ -61,12 +59,6 @@ namespace RMApi.Controllers
                 };
 
                 u.Roles = userRoles.Where(x => x.UserId == u.Id).ToDictionary(Key => Key.RoleId, Val => Val.Name);
-
-                //foreach (var r in user.Roles)
-                //{
-                //    u.Roles.Add(r.RoleId, roles.Where(x => x.Id == r.RoleId).First().Name);
-                //}
-
                 output.Add(u);
             }
             return output;

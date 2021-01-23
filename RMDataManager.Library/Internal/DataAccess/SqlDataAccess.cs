@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace RMDataManager.Library.Internal.DataAccess
 {
-    internal class SqlDataAccess : IDisposable
+    public class SqlDataAccess : IDisposable, ISqlDataAccess
     {
         public SqlDataAccess(IConfiguration config)
         {
@@ -111,11 +111,5 @@ namespace RMDataManager.Library.Internal.DataAccess
             _transaction = null;
             _connection = null;
         }
-
-        // Open connect/start transaction method
-        // Load using the transaction
-        // save using the transaction
-        // Close connection/stop transaction method
-        // Dispose
     }
 }
