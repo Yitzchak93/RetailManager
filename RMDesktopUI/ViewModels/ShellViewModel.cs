@@ -36,7 +36,7 @@ namespace RMDesktopUI.ViewModels
             {
                 bool output = false;
 
-                // TODO: (token) MY TODO the token seems to be woking here but on webpage it isnt for some reason displaying
+                // TODO: (token) MY TODO the token seems to be working here but on web page it isn't for some reason displaying
                 if (string.IsNullOrEmpty(_user.Token) == false)
                 {
                     output = true;
@@ -46,14 +46,28 @@ namespace RMDesktopUI.ViewModels
             }
         }
 
+        public bool IsLoggedOut
+        {
+            get
+            {
+                return !IsLoggedIn;
+            }
+        }
+
         public void ExitApplication()
         {
-             TryCloseAsync();
+            TryCloseAsync();
         }
 
         public async Task UserManagement()
         {
-             await ActivateItemAsync(IoC.Get<UserDisplayViewModel>(), new CancellationToken());
+            await ActivateItemAsync(IoC.Get<UserDisplayViewModel>(), new CancellationToken());
+        }
+
+        public async Task LogIn()
+        {
+            await ActivateItemAsync(IoC.Get<LoginViewModel>(), new CancellationToken());
+
         }
 
         public async Task LogOut()
@@ -62,12 +76,14 @@ namespace RMDesktopUI.ViewModels
             _apiHelper.LogOffUser();
             await ActivateItemAsync(IoC.Get<LoginViewModel>(), new CancellationToken());
             NotifyOfPropertyChange(() => IsLoggedIn);
+            NotifyOfPropertyChange(() => IsLoggedOut);
         }
 
         public async Task HandleAsync(LogOnEvent message, CancellationToken cancellationToken)
         {
             await ActivateItemAsync(IoC.Get<SalesViewModel>(), cancellationToken);
             NotifyOfPropertyChange(() => IsLoggedIn);
+            NotifyOfPropertyChange(() => IsLoggedOut);
         }
     }
 }
