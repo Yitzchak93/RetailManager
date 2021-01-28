@@ -33,25 +33,25 @@ namespace RMApi.Controllers
         public async Task<IActionResult> Privacy()
         {
             // TODO: 3M (create inital user) Uncomment this when first run application so one user with roles is created
-            //string[] roles = { "Admin", "Manager", "Cashier" };
+            string[] roles = { "Admin", "Manager", "Cashier" };
 
-            //foreach (var role in roles)
-            //{
-            //    var roleExists = await _roleManager.RoleExistsAsync(role);
+            foreach (var role in roles)
+            {
+                var roleExists = await _roleManager.RoleExistsAsync(role);
 
-            //    if (roleExists == false)
-            //    {
-            //        await _roleManager.CreateAsync(new IdentityRole(role));
-            //    }
-            //}
+                if (roleExists == false)
+                {
+                    await _roleManager.CreateAsync(new IdentityRole(role));
+                }
+            }
 
-            //var user = await _userManager.FindByEmailAsync("yitzchak@iamyitzchak.com");
+            var user = await _userManager.FindByEmailAsync("yitzchak@iamyitzchak.com");
 
-            //if (user != null)
-            //{
-            //    await _userManager.AddToRoleAsync(user, "Admin");
-            //    await _userManager.AddToRoleAsync(user, "Cashier");
-            //}
+            if (user != null)
+            {
+                await _userManager.AddToRoleAsync(user, "Admin");
+                await _userManager.AddToRoleAsync(user, "Cashier");
+            }
 
             return View();
         }
