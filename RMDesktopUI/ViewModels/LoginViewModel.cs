@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using RMDesktopUI.Library.Api;
 using RMDesktopUI.EventModels;
 using System.Threading;
+using Microsoft.Extensions.Configuration;
 
 namespace RMDesktopUI.ViewModels
 {
@@ -19,7 +20,7 @@ namespace RMDesktopUI.ViewModels
         private IAPIHelper _apiHelper;
         private IEventAggregator _events;
 
-        public LoginViewModel(IAPIHelper apiHelper, IEventAggregator events)
+        public LoginViewModel(IAPIHelper apiHelper, IEventAggregator events )
         {
             _apiHelper = apiHelper;
             _events = events;
