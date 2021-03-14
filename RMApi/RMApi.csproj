@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <UserSecretsId>aspnet-RMApi-66566246-7ED1-4ED8-8053-AC1766DF53AF</UserSecretsId>
     <AssemblyName>RMApi</AssemblyName>
   </PropertyGroup>

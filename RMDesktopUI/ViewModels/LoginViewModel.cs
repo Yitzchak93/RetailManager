@@ -14,13 +14,13 @@ namespace RMDesktopUI.ViewModels
 {
     public class LoginViewModel : Screen
     {
-        private string _userName = "yitzchak@iamyitzchak.com";
+        private string _userName = "admin@rm.com";
         private string _password = "Pwd12345.";
 
         private IAPIHelper _apiHelper;
         private IEventAggregator _events;
 
-        public LoginViewModel(IAPIHelper apiHelper, IEventAggregator events )
+        public LoginViewModel(IAPIHelper apiHelper, IEventAggregator events)
         {
             _apiHelper = apiHelper;
             _events = events;
@@ -100,7 +100,6 @@ namespace RMDesktopUI.ViewModels
                 await _apiHelper.GetLoggedInUserInfo(result.Access_Token);
 
                 await _events.PublishOnUIThreadAsync(new LogOnEvent(), new CancellationToken());
-
             }
             catch (Exception ex)
             {

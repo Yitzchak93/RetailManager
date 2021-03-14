@@ -45,11 +45,12 @@ namespace RMApi.Controllers
                 }
             }
 
-            var user = await _userManager.FindByEmailAsync("yitzchak@iamyitzchak.com");
+            var user = await _userManager.FindByEmailAsync("admin@rm.com");
 
             if (user != null)
             {
                 await _userManager.AddToRoleAsync(user, "Admin");
+                await _userManager.AddToRoleAsync(user, "Manager");
                 await _userManager.AddToRoleAsync(user, "Cashier");
             }
 
