@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "RMData", "RMData\RMData.sqlproj", "{BEA753AC-AA8E-4EBE-A855-A890E86926B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RMDesktopUI", "RMDesktopUI\RMDesktopUI.csproj", "{11BC0945-61A3-416D-AE49-B30E00B09C69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RMDesktopUI", "RMDesktopUI\RMDesktopUI.csproj", "{11BC0945-61A3-416D-AE49-B30E00B09C69}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RMDataManager.Library", "RMDataManager.Library\RMDataManager.Library.csproj", "{2C90B828-C980-447C-8942-9016CEB109D6}"
 EndProject
@@ -23,6 +23,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		Roadmap.txt = Roadmap.txt
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApps", "WebApps", "{2EB9FD6C-12DF-463B-AFD0-057D58163FC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portal", "Portal\Portal.csproj", "{B4870FA0-CEB1-4F32-987F-8BA932994080}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,6 +56,10 @@ Global
 		{93091CF4-4BEF-43FF-9371-DA78050C3BA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93091CF4-4BEF-43FF-9371-DA78050C3BA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93091CF4-4BEF-43FF-9371-DA78050C3BA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4870FA0-CEB1-4F32-987F-8BA932994080}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4870FA0-CEB1-4F32-987F-8BA932994080}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4870FA0-CEB1-4F32-987F-8BA932994080}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4870FA0-CEB1-4F32-987F-8BA932994080}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +70,7 @@ Global
 		{2C90B828-C980-447C-8942-9016CEB109D6} = {E0FFA2B1-3518-42AD-A7CD-9F0E5713D6A6}
 		{4DDD9C06-AC33-4621-B503-D43348A344F3} = {21468FC4-829A-4831-904F-022FA7C8E27C}
 		{93091CF4-4BEF-43FF-9371-DA78050C3BA1} = {E0FFA2B1-3518-42AD-A7CD-9F0E5713D6A6}
+		{B4870FA0-CEB1-4F32-987F-8BA932994080} = {2EB9FD6C-12DF-463B-AFD0-057D58163FC5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D9585DED-CBF6-493D-B90E-D0FCD8CBB03C}
