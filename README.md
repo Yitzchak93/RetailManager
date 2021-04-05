@@ -1,6 +1,7 @@
 # Retail Manager
 
-The Retail Management System Consists of 3 Projects.
+The Retail Management Solution Consists of 3 main Projects.
  1. The Frontend, a WPF project named RMDesktopUI.
- 2. The Backend-Database, an Azure SQL Database named RMData.
- 3. The Backend ASP.NET Core API project called RMApi. It serves to communicate between the Frontend UI to the Backend-Database.
+ 2. The Database, an Azure SQL Database named RMData.
+ 3. The API, an ASP.NET Core API project called RMApi.
+ 4. The Frontend and API projects each have a class library.
